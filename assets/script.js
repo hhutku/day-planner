@@ -2,15 +2,15 @@ var textArea = $('textArea');
 var container = $('.container');
 var clearBtn = $('#clearBtn');
 
-var eventArea9 = $('#inlineFormInput9');
-var eventArea10 = $('#inlineFormInput10');
-var eventArea11 = $('#inlineFormInput11');
-var eventArea12 = $('#inlineFormInput12');
-var eventArea1 = $('#inlineFormInput1');
-var eventArea2 = $('#inlineFormInput2');
-var eventArea3 = $('#inlineFormInput3');
-var eventArea4 = $('#inlineFormInput4');
-var eventArea5 = $('#inlineFormInput5');
+var eventArea9 = $('#input9');
+var eventArea10 = $('#input10');
+var eventArea11 = $('#input11');
+var eventArea12 = $('#input12');
+var eventArea1 = $('#input1');
+var eventArea2 = $('#input2');
+var eventArea3 = $('#input3');
+var eventArea4 = $('#input4');
+var eventArea5 = $('#input5');
 
 
 
