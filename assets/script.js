@@ -26,44 +26,49 @@ eventArea4.text(localStorage.getItem("4P"));
 eventArea5.text(localStorage.getItem("5P"));
 
 // selecting button dynamically and storing data in local storage
-$("button[type='submit']").on('click', function(e){
+$("button[type='submit']").on('click', function (e) {
     e.preventDefault();
-        var btnClicked = $(e.target);
-        localStorage.setItem(e.target.dataset.set, btnClicked.prev().val());
+    var btnClicked = $(e.target);
 
+    if (e.target.nodeName == "BUTTON") {
+        localStorage.setItem(e.target.dataset.set, btnClicked.prev().val());
+    }
+    else {
+        localStorage.setItem(e.target.dataset.set, btnClicked.parent().prev().val());
+    }
 });
 
 // deleting event areas
-clearBtn.on('click', function(e){
+clearBtn.on('click', function (e) {
     e.preventDefault();
     localStorage.clear();
     location.reload();
 });
 
 // getting the time and displaying the day-planner
-function display(){
-var today = moment();
-// displaying the Current Day, Month and Year
-currentDayEl.text(today.format("dddd, MMM Do, YYYY"));
-//getting the Hour value
-var currentHour = today.format("HH");
-// setting the colors of the event area
-for (i = 0; i < textArea.length; i++) {
-    if (parseInt(textArea[i].dataset.set) > currentHour) {
-        textArea[i].classList.add("future")
-    }
-    if (parseInt(textArea[i].dataset.set) == currentHour) {
-        textArea[i].classList.add("present")
-    }
-    if (parseInt(textArea[i].dataset.set) < currentHour) {
-        textArea[i].classList.add("past")
+function display() {
+    var today = moment();
+    // displaying the Current Day, Month and Year
+    currentDayEl.text(today.format("dddd, MMM Do, YYYY"));
+    //getting the Hour value
+    var currentHour = today.format("HH");
+    // setting the colors of the event area
+    for (i = 0; i < textArea.length; i++) {
+        if (parseInt(textArea[i].dataset.set) > currentHour) {
+            textArea[i].classList.add("future")
+        }
+        if (parseInt(textArea[i].dataset.set) == currentHour) {
+            textArea[i].classList.add("present")
+        }
+        if (parseInt(textArea[i].dataset.set) < currentHour) {
+            textArea[i].classList.add("past")
+        }
     }
 }
-} 
 // trigerring the display function when the page initially loaded
 display();
 
-// renewing the moment() function to show the date and  the colors correctly when time passes to another time interval.
+// renewing the moment() function to show the date and the colors correctly when time passes to another time interval.
 setInterval(function () {
     display();
 }, 1000);
