@@ -19,7 +19,7 @@
 
 ### Meta
 
-#### [Link](https://hhutku.github.io/day-planner/) for the project.
+- [Link](https://hhutku.github.io/day-planner/) for the project.
 
 
 
