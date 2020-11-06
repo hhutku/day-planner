@@ -17,7 +17,7 @@
 
 - This project utilizes javascript and css. A basic html template and styling sheet was created. Bootstraps 4 was utilized for the styling and for media responsiveness. jQuery was used to select and mainpulate the DOM. Local storage was used to save event data. Moment.js was used to create the time responsiveness in the page.
 
-![Day-Planner Screen-Shot](https://github.com/hhutku/day-planner/blob/main/assets/screenShots/dayPlannerImage.png)
+![Day-Planner Screen-Shot](https://github.com/hhutku/day-planner/blob/main/assets/dayPlannerImage.png)
 
 ### Meta
 
