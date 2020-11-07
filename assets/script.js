@@ -38,7 +38,7 @@ $("button[type='submit']").on('click', function (e) {
     }
 });
 
-// deleting event areas
+// Refreshing the planner
 clearBtn.on('click', function (e) {
     e.preventDefault();
     localStorage.clear();
@@ -49,7 +49,7 @@ clearBtn.on('click', function (e) {
 function display() {
     var today = moment();
     // displaying the Current Day, Month and Year
-    currentDayEl.text(today.format("dddd, MMM Do, YYYY"));
+    currentDayEl.text(today.format("dddd, MMM Do, YYYY, h:mm:ss"));
     //getting the Hour value
     var currentHour = today.format("HH");
     // setting the colors of the event area
