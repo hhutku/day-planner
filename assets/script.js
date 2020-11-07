@@ -25,6 +25,8 @@ eventArea3.text(localStorage.getItem("3P"));
 eventArea4.text(localStorage.getItem("4P"));
 eventArea5.text(localStorage.getItem("5P"));
 
+
+
 // selecting button dynamically and storing data in local storage
 $("button[type='submit']").on('click', function (e) {
     e.preventDefault();
@@ -45,13 +47,25 @@ clearBtn.on('click', function (e) {
     location.reload();
 });
 
+
+// defining a variable to refresh the page for coloring
+var oldCurrentHour = moment().format("HH");
+
+
+
 // getting the time and displaying the day-planner
 function display() {
     var today = moment();
+
+
     // displaying the Current Day, Month and Year
     currentDayEl.text(today.format("dddd, MMM Do, YYYY, h:mm:ss"));
     //getting the Hour value
     var currentHour = today.format("HH");
+    // checking to pass a new hour to refresh the page for coloring    
+    if (currentHour != oldCurrentHour) {
+        location.reload();
+    }
     // setting the colors of the event area
     for (i = 0; i < textArea.length; i++) {
         if (parseInt(textArea[i].dataset.set) > currentHour) {
@@ -65,13 +79,14 @@ function display() {
         }
     }
 }
-// trigerring the display function when the page initially loaded
-display();
+
 
 // renewing the moment() function to show the date and the colors correctly when time passes to another time interval.
 setInterval(function () {
     display();
 }, 1000);
+// trigerring the display function when the page initially loaded
+display();
 
 
 
